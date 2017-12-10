@@ -41,7 +41,7 @@ Dir.glob(File.expand_path("../tmp/**/*.html", __FILE__)).each do |path|
 end
 
 # Make a stats of WP version
-versions.group_by { |e| e.last }.sort.each do |key, values|
+versions.group_by(&:last).sort.each do |key, values|
   puts [key, values.length].join(",")
 end
 
